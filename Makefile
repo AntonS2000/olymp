@@ -1,18 +1,13 @@
-.PHONY: all build run clean
-
-all: clean build run
+.PHONY: build run clean
 
 build:
 	mkdir ./build
 	g++ src/main.cpp -o ./build/main
 
-run: build
-	./build/main
-
 clean:
 	rm -f -R ./build/
 	
-
-
+run: clean build
+	./build/main
 
 
